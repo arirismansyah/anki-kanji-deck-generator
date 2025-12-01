@@ -86,8 +86,8 @@ The front of the card typically displays the Kanji character, prompting the user
 ### Back of the Card
 The back of the card reveals all about the Kanji including readings, meanings, and mnemonic hint.
 
-<img src="/kanji-deck-generator/src/kanjideck_generator/media/front.jpeg" height='500px'>
-<img src="/kanji-deck-generator/src/kanjideck_generator/media/back.jpeg" height='500px'>
+<img src="https://github.com/arirismansyah/anki-kanji-deck-generator/blob/master/src/kanjideck_generator/media/front.jpeg" height='500px'>
+<img src="https://github.com/arirismansyah/anki-kanji-deck-generator/blob/master/src/kanjideck_generator/media/back.jpeg" height='500px'>
 
 
 
