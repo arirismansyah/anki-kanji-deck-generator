@@ -6,24 +6,18 @@ from utils.processing import Preprocessing
 from helper.classes import LevelType
 import genanki
 import pandas as pd
+from config.config import Config
+from config.template import DeckTemplate
 
 class KanjiDeck(KanjiApi, Preprocessing):
     def __init__(self):
         super().__init__()
-        self.data_keys = {
-            'kanji.character': 'kanji',
-            'meaning': 'meaning',
-            'kunyomi_ja': 'kunyomi_ja',
-            'kunyomi': 'kunyomi',
-            'onyomi_ja': 'onyomi_ja',
-            'onyomi': 'onyomi',
-            'mn_hint': 'mnemonic',
-        }
+        self.data_keys = Config.DATA_KEYS
         
-        self.front_html = self.load_template('../template/front.html')
-        self.back_html = self.load_template('../template/back.html')
-        self.styling_css = self.load_template('../template/styling.css')
-        self.result_dir = '../result'
+        self.front_html = DeckTemplate.FRONT_TEMPLATE
+        self.back_html = DeckTemplate.BACK_TEMPLATE
+        self.styling_css = DeckTemplate.CSS_TEMPLATE
+        self.result_dir = Config.RESULT_DIR
     
     def generate_deck_data(self, level_type:LevelType, level, keys:dict):
         if level_type == LevelType.JLPT:
