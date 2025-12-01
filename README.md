@@ -76,6 +76,21 @@ Find the generated `.apkg` files in the directory where you ran the script, open
 
 -----
 
+## 📸 Screenshots
+
+Here are examples of the generated Anki flashcards as they appear in the AnkiDroid mobile app:
+
+### Front of the Card
+The front of the card typically displays the Kanji character, prompting the user to recall its meaning and readings.
+
+### Back of the Card
+The back of the card reveals all about the Kanj  including readings, meanings, and mnemonic hint.
+
+<img src="/kanji-deck-generator/src/kanjideck_generator/media/front.jpeg" height='500px'>
+<img src="/kanji-deck-generator/src/kanjideck_generator/media/back.jpeg" height='500px'>
+
+
+
 ## 📦 Key Dependencies
 
 This package automatically installs the following core dependencies:
