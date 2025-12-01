@@ -98,7 +98,8 @@ class KanjiDeck(KanjiApi, Preprocessing):
                 data_fields.append(data.get(field, ''))
             note = genanki.Note(
                 model=kanji_model,
-                fields=data_fields
+                fields=data_fields,
+                guid=f"{MODEL_ID}-{data_fields[0]}"
             )
             kanji_deck.add_note(note)
 
