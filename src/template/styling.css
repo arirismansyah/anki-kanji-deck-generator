@@ -1,0 +1,157 @@
+.kanji-card {
+  width: 100%;
+  max-width: 100%;
+  min-height: 60vh;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  background-color: white;
+  font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+}
+
+/* ===== FRONT ===== */
+.kanji-front {
+  background: linear-gradient(135deg, #f500a1 0%, #d4008a 100%);
+  color: white;
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  border-radius: 16px;
+  font-weight: 300;
+}
+
+/* ===== BACK ===== */
+.kanji-back {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
+/* Top area - Kanji */
+.kanji-top {
+  background: linear-gradient(135deg, #f500a1 0%, #d4008a 100%);
+  color: white;
+  font-size: 64px;
+  text-align: center;
+  padding: 24px 0;
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+/* Meaning */
+.kanji-meaning {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  flex-shrink: 0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Readings Section */
+.kanji-readings {
+  display: flex;
+  flex: 1;
+  min-height: 140px;
+}
+
+.reading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 16px;
+  gap: 8px;
+}
+
+.reading-left {
+  border-right: 2px solid #e0e0e0;
+  background-color: #fafafa;
+}
+
+.reading-right {
+  background-color: #fafafa;
+}
+
+.label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.value-ja {
+  font-size: 28px;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.value-romaji {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  margin-top: 2px;
+  text-align: center;
+}
+
+/* Mnemonic Section */
+.kanji-mnemonic {
+  background: linear-gradient(to right, #fff9e6, #fffbf0);
+  border-top: 2px solid #ffe066;
+  padding: 16px 20px;
+  flex-shrink: 0;
+}
+
+.mnemonic-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #cc8800;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mnemonic-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+}
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+  .kanji-front {
+    font-size: 64px;
+  }
+  
+  .kanji-top {
+    font-size: 52px;
+    padding: 20px 0;
+  }
+  
+  .kanji-meaning {
+    font-size: 18px;
+    padding: 14px;
+  }
+  
+  .value-ja {
+    font-size: 24px;
+  }
+  
+  .value-romaji {
+    font-size: 14px;
+  }
+  
+  .mnemonic-text {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="kanji-card">
+  <div class="kanji-back">
+    <!-- Top: Kanji -->
+    <div class="kanji-top">{{kanji}}</div>
+    
+    <!-- Meaning -->
+    <div class="kanji-meaning">{{meaning}}</div>
+    
+    <!-- Readings Section -->
+    <div class="kanji-readings">
+      <!-- Kunyomi -->
+      <div class="reading reading-left">
+        <div class="label">kunyomi</div>
+        {{#kunyomi_ja}}
+        <div class="value-ja">{{kunyomi_ja}}</div>
+        {{/kunyomi_ja}}
+        {{#kunyomi}}
+        <div class="value-romaji">{{kunyomi}}</div>
+        {{/kunyomi}}
+      </div>
+      
+      <!-- Onyomi -->
+      <div class="reading reading-right">
+        <div class="label">onyomi</div>
+        {{#onyomi_ja}}
+        <div class="value-ja">{{onyomi_ja}}</div>
+        {{/onyomi_ja}}
+        {{#onyomi}}
+        <div class="value-romaji">{{onyomi}}</div>
+        {{/onyomi}}
+      </div>
+    </div>
+    
+    <!-- Mnemonic (if exists) -->
+    {{#mnemonic}}
+    <div class="kanji-mnemonic">
+      <div class="mnemonic-label">💡 Mnemonic</div>
+      <div class="mnemonic-text">{{mnemonic}}</div>
+    </div>
+    {{/mnemonic}}
+  </div>
+</div>
