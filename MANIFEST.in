@@ -1,6 +1,4 @@
 include README.md
 include LICENSE
-recursive-include src/generator/template *.html *.css
-recursive-include src/generator/media *
 global-exclude __pycache__
 global-exclude *.py[co]

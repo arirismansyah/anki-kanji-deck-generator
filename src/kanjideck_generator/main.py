@@ -77,7 +77,7 @@ class KanjiDeck(KanjiApi, Preprocessing):
             fields=model_fileds,
             templates=[
                 {
-                    'name': 'Kanji Card',
+                    'name': f'Kanji Card {level}',
                     'qfmt': self.front_html,  
                     'afmt': self.back_html,   
                 },
