@@ -1,13 +1,13 @@
 
 import os
 import random
-from utils.api import KanjiApi
-from utils.processing import Preprocessing
-from helper.classes import LevelType
+from kanjideck_generator.utils.api import KanjiApi
+from kanjideck_generator.utils.processing import Preprocessing
+from kanjideck_generator.helper.classes import LevelType
 import genanki
 import pandas as pd
-from config.config import Config
-from config.template import DeckTemplate
+from kanjideck_generator.config.config import Config
+from kanjideck_generator.config.template import DeckTemplate
 
 class KanjiDeck(KanjiApi, Preprocessing):
     def __init__(self):
@@ -78,11 +78,11 @@ class KanjiDeck(KanjiApi, Preprocessing):
             templates=[
                 {
                     'name': 'Kanji Card',
-                    'qfmt': self.front_html,  # Load dari file
-                    'afmt': self.back_html,   # Load dari file
+                    'qfmt': self.front_html,  
+                    'afmt': self.back_html,   
                 },
             ],
-            css=self.styling_css  # Load dari file
+            css=self.styling_css  
         )
 
         # Create deck
@@ -91,7 +91,7 @@ class KanjiDeck(KanjiApi, Preprocessing):
             f'Kanji Deck - {str(level_type).capitalize()} - {str(level).capitalize()}'
         )
 
-        # Tambahkan notes dari data
+        
         for data in data_deck:
             data_fields = []
             for field in self.data_keys.values():
@@ -102,7 +102,7 @@ class KanjiDeck(KanjiApi, Preprocessing):
             )
             kanji_deck.add_note(note)
 
-        # Export ke file .apkg
+    
         if not os.path.isdir(self.result_dir):
             os.makedirs(self.result_dir)
             

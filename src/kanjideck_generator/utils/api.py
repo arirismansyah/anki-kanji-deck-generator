@@ -1,5 +1,5 @@
 import requests
-from config.config import Config
+from kanjideck_generator.config.config import Config
 class KanjiApi:
     def __init__(self):
         self.headers = {

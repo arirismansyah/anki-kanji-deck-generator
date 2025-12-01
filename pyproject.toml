@@ -1,23 +1,40 @@
-[project]
-name = "kanji-deck-generator"
+[tool.poetry]
+name = "anki-kanji-deck-generator"
 version = "0.1.0"
-description = ""
-authors = [
-    {name = "arirismansyah",email = "rismansyah.ari48@gmail.com"}
-]
+description = "Generate Anki flashcard decks for JLPT Kanji with customizable templates"
+authors = ["arirismansyah <rismansyah.ari48@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.11"
-dependencies = [
-    "requests (>=2.32.5,<3.0.0)",
-    "pandas (>=2.3.3,<3.0.0)",
-    "dotenv (>=0.9.9,<0.10.0)",
-    "genanki (>=0.13.1,<0.14.0)",
-    "pydantic (>=2.12.5,<3.0.0)"
-    
+license = "MIT"
+homepage = "https://github.com/arirismansyah/anki-kanji-deck-generator"
+repository = "https://github.com/arirismansyah/anki-kanji-deck-generator"
+keywords = ["anki", "jlpt", "kanji", "japanese", "flashcards", "language-learning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Topic :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+]
+packages = [{include = "kanjideck_generator", from = "src"}]
+include = [
+    "src/kanjideck_generator/template/*.html",
+    "src/kanjideck_generator/template/*.css",
 ]
 
-[tool.poetry]
-packages = [{include = "kanji_deck", from = "src"}]
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.32.5"
+pandas = "^2.3.3"
+genanki = "^0.13.1"
+pydantic = "^2.12.5"
+
+[tool.poetry.group.dev.dependencies]
+build = "^1.3.0"
+twine = "^6.2.0"
+pytest = "^7.0.0"
+black = "^22.0.0"
+flake8 = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

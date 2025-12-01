@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-from helper.classes import GradeLevel, JLPTLevel, GRADE_TO_JLPT_MAP, JLPT_TO_GRADE_MAP
+from kanjideck_generator.helper.classes import GradeLevel, JLPTLevel, GRADE_TO_JLPT_MAP, JLPT_TO_GRADE_MAP
 class Preprocessing:
     def filter_kanji_list(self, kanji_list:list, key:str, value)-> list:
         result = []
