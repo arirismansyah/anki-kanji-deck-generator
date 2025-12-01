@@ -114,5 +114,6 @@ class KanjiDeck(KanjiApi, Preprocessing):
             
         output_file = os.path.join(self.result_dir, output_filename)
         genanki.Package(kanji_deck).write_to_file(output_file)
+        print(f"Success Generated Deck {str(level_type).capitalize()} : {str(level).capitalize()} - (Kanji Count: {len(data_deck)}) - Output: {output_file}")
 
 
