@@ -30,19 +30,37 @@ class KanjiDeck(KanjiApi, Preprocessing):
             grades = self.jlpt_to_grade(level)
         else:
             grades = [level]
+        
+        
             
-        if isinstance(grades, list) and len(grades)>0:
-            for grade in grades:
+        if isinstance(grades, list):
+            if len(grades)>0:
+                for grade in grades:
+                    response = self.get_all_kanji_details()
+                    if response.status_code==200:
+                        kanji = response.json()
+                        if isinstance(kanji, list):
+                            filtered_kanji = self.filter_kanji_list(kanji_list=kanji, key='grade', value=grade)
+                            if isinstance(filtered_kanji, list) and len(filtered_kanji)>0:
+                                list_extracted_kanji = []
+                                for kanji in filtered_kanji:
+                                    extracted_kanji = self.extract_values(data=kanji, keys=keys)
+                                    list_extracted_kanji.append(extracted_kanji)                   
+            else:
                 response = self.get_all_kanji_details()
-                if response.status_code==200:
+                if response.status_code == 200:
                     kanji = response.json()
                     if isinstance(kanji, list):
-                        filtered_kanji = self.filter_kanji_list(kanji_list=kanji, key='grade', value=grade)
-                        if isinstance(filtered_kanji, list) and len(filtered_kanji)>0:
+                        filtered_kanji = self.filter_kanji_list(
+                            kanji_list=kanji, key='grade', value=None)
+                        if isinstance(filtered_kanji, list) and len(filtered_kanji) > 0:
                             list_extracted_kanji = []
                             for kanji in filtered_kanji:
-                                extracted_kanji = self.extract_values(data=kanji, keys=keys)
-                                list_extracted_kanji.append(extracted_kanji)                   
+                                extracted_kanji = self.extract_values(
+                                    data=kanji, keys=keys)
+                                list_extracted_kanji.append(
+                                    extracted_kanji)
+                
         return list_extracted_kanji
                                     
     def load_template(self, filename):
@@ -58,9 +76,6 @@ class KanjiDeck(KanjiApi, Preprocessing):
         
         for field in self.data_keys.values():
             model_fileds.append({'name':field})
-
-        print(f"Model ID: {MODEL_ID}")
-        print(f"Deck ID: {DECK_ID}")
 
         kanji_model = genanki.Model(
             MODEL_ID,
