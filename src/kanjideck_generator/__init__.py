@@ -5,5 +5,5 @@ Generate Anki flashcard decks for JLPT Kanji learning with customizable template
 
 from .main import KanjiDeck
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 __all__ = ["KanjiDeck"]

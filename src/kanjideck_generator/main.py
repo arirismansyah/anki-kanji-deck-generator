@@ -73,7 +73,7 @@ class KanjiDeck(KanjiApi, Preprocessing):
 
         kanji_model = genanki.Model(
             MODEL_ID,
-            'Kanji Model Enhanced',
+            f'Kanji Model Enhanced {level}',
             fields=model_fileds,
             templates=[
                 {
